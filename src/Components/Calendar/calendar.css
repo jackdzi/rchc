@@ -1,0 +1,104 @@
+.calendar-container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.calendar-header h1 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.calendar-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.calendar-header h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.calendar-table-container {
+  border-top: 2px solid #9ca3af;
+  padding-top: 1.5rem;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header-row {
+  border-bottom: 2px solid #9ca3af;
+}
+
+.table-header {
+  text-align: left;
+  padding: 0.5rem 0;
+  font-weight: 600;
+}
+
+.calendar-row {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.date-time-cell {
+  padding: 1rem 2rem 1rem 0;
+  vertical-align: top;
+}
+
+.date {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.time {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.location-cell {
+  padding: 1rem 2rem 1rem 0;
+  vertical-align: top;
+}
+
+.location {
+  margin-bottom: 0.25rem;
+}
+
+.directions {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.topic-cell {
+  padding: 1rem 0;
+  vertical-align: top;
+}
+
+.guest-facilitator {
+  color: #dc2626;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.guest-topic {
+  color: #dc2626;
+}
+
+.regular-topic {
+  color: #000000;
+}

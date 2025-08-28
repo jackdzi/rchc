@@ -1,0 +1,38 @@
+@media (max-width: 768px) {
+  .responsiveArrowIcon {
+    max-height: 50%;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 2rem;
+}
+
+.arrowIcon {
+  padding: 1rem 0 1rem 0;
+}

@@ -1,4 +1,5 @@
-img.image {
-    height: auto;
-    width: clamp(10rem, 50vw, 60rem);
+.image {
+    width: clamp(200px, 35vw, 35vw); /* Min 200px, ideal 50% viewport width, max 400px */
+    height: 80%;
+    object-fit: contain;
 }
