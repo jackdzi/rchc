@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rchc/static/css/main.b5119800.css",
-    "main.js": "/rchc/static/js/main.da03ec52.js",
+    "main.js": "/rchc/static/js/main.8d16ecbc.js",
     "static/js/453.fbb73d42.chunk.js": "/rchc/static/js/453.fbb73d42.chunk.js",
     "static/media/poster4.png": "/rchc/static/media/poster4.33f279bfbe287823b749.png",
     "static/media/poster2.png": "/rchc/static/media/poster2.34fbaa681e13cf0e2001.png",
@@ -10,11 +10,11 @@
     "static/media/Rice Critical Humanities_.png": "/rchc/static/media/Rice Critical Humanities_.48ce2518599fbff885cb.png",
     "index.html": "/rchc/index.html",
     "main.b5119800.css.map": "/rchc/static/css/main.b5119800.css.map",
-    "main.da03ec52.js.map": "/rchc/static/js/main.da03ec52.js.map",
+    "main.8d16ecbc.js.map": "/rchc/static/js/main.8d16ecbc.js.map",
     "453.fbb73d42.chunk.js.map": "/rchc/static/js/453.fbb73d42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5119800.css",
-    "static/js/main.da03ec52.js"
+    "static/js/main.8d16ecbc.js"
   ]
 }
