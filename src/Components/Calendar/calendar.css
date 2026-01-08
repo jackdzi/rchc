@@ -14,15 +14,13 @@
 .calendar-header h1 {
   font-size: 1.125rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
   margin: 0 0 0.5rem 0;
 }
 
 .calendar-header h2 {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .calendar-header h3 {
@@ -31,74 +29,82 @@
   margin: 0;
 }
 
-.calendar-table-container {
+/* Meetings List */
+.meetings-list {
   border-top: 2px solid #9ca3af;
   padding-top: 1.5rem;
 }
 
-.calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-header-row {
-  border-bottom: 2px solid #9ca3af;
-}
-
-.table-header {
-  text-align: left;
-  padding: 0.5rem 0;
-  font-weight: 600;
-}
-
-.calendar-row {
+.meeting-row {
+  display: flex;
+  gap: 3rem;
+  padding: 1.25rem 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.date-time-cell {
-  padding: 1rem 2rem 1rem 0;
-  vertical-align: top;
+.meeting-left {
+  min-width: 150px;
+  flex-shrink: 0;
 }
 
-.date {
-  font-weight: 500;
+.meeting-number {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
   margin-bottom: 0.25rem;
 }
 
-.time {
+.meeting-date {
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0.125rem;
+}
+
+.meeting-time {
   font-size: 0.875rem;
   color: #374151;
 }
 
-.location-cell {
-  padding: 1rem 2rem 1rem 0;
-  vertical-align: top;
+.meeting-right {
+  flex: 1;
 }
 
-.location {
-  margin-bottom: 0.25rem;
-}
-
-.directions {
-  font-size: 0.875rem;
-  color: #6b7280;
-}
-
-.topic-cell {
-  padding: 1rem 0;
-  vertical-align: top;
-}
-
-.guest-facilitator {
+.meeting-facilitator {
   color: #dc2626;
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
 
-.guest-topic {
-  color: #dc2626;
+.meeting-topic {
+  color: #000;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
 }
 
-.regular-topic {
-  color: #000000;
+.meeting-readings {
+  margin-top: 0.5rem;
+}
+
+.reading-item {
+  font-size: 0.9rem;
+  color: #4b5563;
+  font-style: italic;
+  margin-bottom: 0.125rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+
+  .meeting-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .meeting-left {
+    min-width: auto;
+  }
 }

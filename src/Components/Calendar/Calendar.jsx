@@ -4,121 +4,104 @@ import "./calendar.css";
 const CalendarHeader = () => (
   <div className="calendar-header">
     <h1>RICE CRITICAL HUMANITIES COLLECTIVE</h1>
-    <h2>Fall 2025 Calendar</h2>
-    <h3>Topic: A.I. and Education</h3>
+    <h2>Spring 2025 Calendar</h2>
+    <h3>Topic: Nationalism</h3>
   </div>
 );
 
-const TableHeader = () => (
-  <thead>
-    <tr className="table-header-row">
-      <th className="table-header">Date and Time</th>
-      <th className="table-header">Location</th>
-      <th className="table-header">Topic</th>
-    </tr>
-  </thead>
-);
-
-const CalendarRow = ({
+const MeetingRow = ({
+  meetingNumber,
   date,
   time,
-  location,
-  topic,
-  isGuestSession = false,
+  topics,
   facilitator = null,
+  readings = [],
 }) => (
-  <tr className="calendar-row">
-    <td className="date-time-cell">
-      <div className="date">{date}</div>
-      <div className="time">{time}</div>
-    </td>
-    <td className="location-cell">
-      <div className="location">{location}</div>
-    </td>
-    <td className="topic-cell">
-      {isGuestSession && facilitator && (
-        <div className="guest-facilitator">
-          Guest Facilitator:
-          <br />
-          {facilitator}
+  <div className="meeting-row">
+    <div className="meeting-left">
+      <div className="meeting-number">Meeting {meetingNumber}</div>
+      <div className="meeting-date">{date}</div>
+      <div className="meeting-time">{time}</div>
+    </div>
+    <div className="meeting-right">
+      {facilitator && (
+        <div className="meeting-facilitator">[{facilitator}]</div>
+      )}
+      {topics.map((topic, index) => (
+        <div key={index} className="meeting-topic">{topic}</div>
+      ))}
+      {readings.length > 0 && (
+        <div className="meeting-readings">
+          {readings.map((reading, index) => (
+            <div key={index} className="reading-item">• {reading}</div>
+          ))}
         </div>
       )}
-      <div className={isGuestSession ? "guest-topic" : "regular-topic"}>
-        {topic}
-      </div>
-    </td>
-  </tr>
+    </div>
+  </div>
 );
 
 const Calendar = () => {
-  const events = [
+  const meetings = [
     {
-      date: "Monday, September 8",
+      meetingNumber: 1,
+      date: "February 4",
       time: "12-1 P.M.",
-      location: "Lovett Hall, Room 304",
-      topic: "Introduction",
+      topics: ["What is Nationalism?", "What is the State?"],
     },
     {
-      date: "Monday, September 29",
+      meetingNumber: 2,
+      date: "February 18",
       time: "12-1 P.M.",
-      location: "Lovett Hall, Room 304",
-      topic:
-        "History and Working Definitions: what is technology? What is A.I.? What is education?",
+      topics: ["Diaspora Nationalism"],
+      facilitator: "Vivian Lu",
     },
     {
-      date: "Monday, October 20",
+      meetingNumber: 3,
+      date: "March 4",
       time: "12-1 P.M.",
-      location: "Lovett Hall, Room 304",
-      topic:
-        "Perceptions, Trends, and Public Conversation Surrounding A.I. and Technology",
+      topics: ["Texas, Borders, and Statecraft"],
+      readings: ["Anzaldúa, Mestiza Consciousness", "Balibar, What is a Border?"],
     },
     {
-      date: "Monday, November 3",
+      meetingNumber: 4,
+      date: "March 25",
       time: "12-1 P.M.",
-      location: "Lovett Hall, Room 304",
-      topic: "",
-      isGuestSession: true,
-      facilitator: "Professor Rodrigo Ferreira",
+      topics: ["Nationalism Online: Division and Identity in the Media"],
     },
     {
-      date: "Monday, November 17",
+      meetingNumber: 5,
+      date: "April 8",
       time: "12-1 P.M.",
-      location: "Lovett Hall, Room 304",
-      topic: "Critical Thinking and Literacy in the Age of A.I.",
+      topics: ["TBD"],
+      facilitator: "Guest Faculty – TBD",
     },
     {
-      date: "Monday, December 1",
+      meetingNumber: 6,
+      date: "April 15",
       time: "12-1 P.M.",
-      location: "Lovett Hall, Room 304",
-      topic: "Looking toward the Future with Guest Facilitator: [tbd]",
-      isGuestSession: true,
+      topics: ["The Future of American Nationalism"],
     },
   ];
 
   return (
-      <div className="calendar-container">
-        <CalendarHeader />
-
-        <div className="calendar-table-container">
-          <table className="calendar-table">
-            <TableHeader />
-            <tbody>
-              {events.map((event, index) => (
-                <CalendarRow
-                  key={index}
-                  date={event.date}
-                  time={event.time}
-                  location={event.location}
-                  topic={event.topic}
-                  isGuestSession={event.isGuestSession}
-                  facilitator={event.facilitator}
-                />
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div style={{ paddingBottom: '100px' }}></div>
+    <div className="calendar-container">
+      <CalendarHeader />
+      <div className="meetings-list">
+        {meetings.map((meeting) => (
+          <MeetingRow
+            key={meeting.meetingNumber}
+            meetingNumber={meeting.meetingNumber}
+            date={meeting.date}
+            time={meeting.time}
+            topics={meeting.topics}
+            facilitator={meeting.facilitator}
+            readings={meeting.readings || []}
+          />
+        ))}
       </div>
+      <div style={{ paddingBottom: '100px' }}></div>
+    </div>
   );
 };
 

@@ -9,6 +9,9 @@ const Footer = () => {
           <a href="mailto:ms273@rice.edu" style={{ color: '#6699CC', textDecoration: 'none' }}> ms273@rice.edu </a> or
           <a href="mailto:jh215@rice.edu" style={{ color: '#6699CC', textDecoration: 'none' }}> jh215@rice.edu </a>
         </p>
+        <p style={{ textAlign: 'center', color: 'black', fontFamily: 'Minion Variable Concept', textTransform: 'none' }}>
+          follow us on instagram @ ricecrithumacollective
+        </p>
       </div>
     </footer>
   );
