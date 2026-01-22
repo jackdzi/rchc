@@ -5,7 +5,7 @@ const CalendarHeader = () => (
   <div className="calendar-header">
     <h1>RICE CRITICAL HUMANITIES COLLECTIVE</h1>
     <h2>Spring 2025 Calendar</h2>
-    <h3>Topic: Nationalism</h3>
+    <h3>Topic: Nationalism and Authority</h3>
   </div>
 );
 
@@ -13,6 +13,7 @@ const MeetingRow = ({
   meetingNumber,
   date,
   time,
+  location,
   topics,
   facilitator = null,
   readings = [],
@@ -22,14 +23,15 @@ const MeetingRow = ({
       <div className="meeting-number">Meeting {meetingNumber}</div>
       <div className="meeting-date">{date}</div>
       <div className="meeting-time">{time}</div>
+      <div className="meeting-location">{location}</div>
     </div>
     <div className="meeting-right">
-      {facilitator && (
-        <div className="meeting-facilitator">[{facilitator}]</div>
-      )}
       {topics.map((topic, index) => (
         <div key={index} className="meeting-topic">{topic}</div>
       ))}
+      {facilitator && (
+        <div className="meeting-facilitator">{facilitator}</div>
+      )}
       {readings.length > 0 && (
         <div className="meeting-readings">
           {readings.map((reading, index) => (
@@ -47,39 +49,44 @@ const Calendar = () => {
       meetingNumber: 1,
       date: "February 4",
       time: "12-1 P.M.",
-      topics: ["What is Nationalism?", "What is the State?"],
+      location: "Lovett Hall, 304",
+      topics: ["What is Nationalism? What is the State?"],
     },
     {
       meetingNumber: 2,
       date: "February 18",
       time: "12-1 P.M.",
-      topics: ["Diaspora Nationalism"],
-      facilitator: "Vivian Lu",
+      location: "Lovett Hall, 304",
+      topics: ["Empire, Race, Capitalism: the Nation-State and Unequal Global Order"],
+      facilitator: "Guest Facilitator: Prof. Vivian Lu",
     },
     {
       meetingNumber: 3,
       date: "March 4",
       time: "12-1 P.M.",
-      topics: ["Texas, Borders, and Statecraft"],
-      readings: ["Anzaldúa, Mestiza Consciousness", "Balibar, What is a Border?"],
+      location: "Lovett Hall, 304",
+      topics: ["Borders, Territory, and Texas"],
     },
     {
       meetingNumber: 4,
       date: "March 25",
       time: "12-1 P.M.",
-      topics: ["Nationalism Online: Division and Identity in the Media"],
+      location: "Lovett Hall, 304",
+      topics: ["Nationalism Online: From Media Cultures to Identity Politics"],
     },
     {
       meetingNumber: 5,
       date: "April 8",
       time: "12-1 P.M.",
-      topics: ["TBD"],
-      facilitator: "Guest Faculty – TBD",
+      location: "Lovett Hall, 304",
+      topics: ["The Ambiguities of Nationalism"],
+      facilitator: "Guest Facilitator: Prof. Christian Emden",
     },
     {
       meetingNumber: 6,
       date: "April 15",
       time: "12-1 P.M.",
+      location: "Lovett Hall, 304",
       topics: ["The Future of American Nationalism"],
     },
   ];
@@ -94,6 +101,7 @@ const Calendar = () => {
             meetingNumber={meeting.meetingNumber}
             date={meeting.date}
             time={meeting.time}
+            location={meeting.location}
             topics={meeting.topics}
             facilitator={meeting.facilitator}
             readings={meeting.readings || []}
